@@ -13,8 +13,10 @@ module.exports = {
 	plugins: ['@typescript-eslint'],
 	rules: {
 		'import/prefer-default-export': 'off',
+		'linebreak-style': 'off',
 		'no-underscore-dangle': 'off',
 		'no-undef': 'off',
+		'arrow-body-style': 'off',
 		indent: 'off',
 		'max-classes-per-file': 'off',
 		'import/no-unresolved': 'off',
