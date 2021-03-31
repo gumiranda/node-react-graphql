@@ -3,7 +3,7 @@
     "outDir": "./dist",
     "module": "commonjs",
     "skipLibCheck": true,
-    "target": "es2019",
+    "target": "es2020",
     "typeRoots": ["./custom_typings", "./node_modules/@types"],
     "esModuleInterop": true,
     "allowJs": true,
