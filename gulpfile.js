@@ -18,3 +18,7 @@ gulp.task('clean', () => {
 });
 
 gulp.task('build', gulp.series('clean', 'static', 'scripts'));
+
+gulp.task('watch', () => {
+	return gulp.watch(['src/**/*.ts', 'src/**/*.json'], gulp.series('build'));
+});
