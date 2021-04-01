@@ -1,3 +1,3 @@
-import ranking from './ranking';
+import users from './users';
 
-export default [ranking];
+export default [users];

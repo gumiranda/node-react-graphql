@@ -1,5 +1,5 @@
 import { User } from '@/domain/entities';
 
-export interface LastUserLoader {
+export interface LoadUsers {
 	load: () => Promise<User[]>;
 }
