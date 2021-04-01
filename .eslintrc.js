@@ -21,6 +21,7 @@ module.exports = {
 		'no-unused-vars': 'off',
 		'no-undef': 'off',
 		'arrow-body-style': 'off',
+		'implicit-arrow-linebreak': 'off',
 		indent: 'off',
 		'max-classes-per-file': 'off',
 		'import/no-unresolved': 'off',

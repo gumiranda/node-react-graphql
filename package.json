@@ -12,6 +12,7 @@
     "start": "node --optimize_for_size --max_old_space_size=2000 dist/main/server.js"
   },
   "dependencies": {
+    "apollo-server-express": "^2.22.2",
     "express": "^4.17.1",
     "fs": "^0.0.1-security",
     "module-alias": "^2.2.2",
