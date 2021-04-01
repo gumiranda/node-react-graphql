@@ -14,7 +14,10 @@ module.exports = {
 	rules: {
 		'import/prefer-default-export': 'off',
 		'linebreak-style': 'off',
+		'no-empty-function': 'off',
 		'no-underscore-dangle': 'off',
+		'no-useless-constructor': 'off',
+		'no-unused-vars': 'off',
 		'no-undef': 'off',
 		'arrow-body-style': 'off',
 		indent: 'off',
