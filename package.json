@@ -8,11 +8,12 @@
   "scripts": {
     "build": "rimraf dist && tsc -p tsconfig.json ",
     "build:watch": "tsc -w",
-    "debug": "nodemon -L --watch ./dist --inspect=0.0.0.0:9222 --nolazy ./dist/app.js",
-    "start": "node --optimize_for_size --max_old_space_size=2000 dist/app.js"
+    "debug": "nodemon -L --watch ./dist --inspect=0.0.0.0:9222 --nolazy ./dist/main/server.js",
+    "start": "node --optimize_for_size --max_old_space_size=2000 dist/main/server.js"
   },
   "dependencies": {
     "express": "^4.17.1",
+    "fs": "^0.0.1-security",
     "module-alias": "^2.2.2",
     "rimraf": "^3.0.2"
   },
