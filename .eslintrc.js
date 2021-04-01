@@ -2,7 +2,7 @@ module.exports = {
 	env: {
 		es2020: true,
 		node: true,
-		//	commonjs: true,
+		commonjs: true,
 	},
 	extends: ['airbnb-base'],
 	parser: '@typescript-eslint/parser',
@@ -15,6 +15,7 @@ module.exports = {
 		'import/prefer-default-export': 'off',
 		'linebreak-style': 'off',
 		'no-empty-function': 'off',
+		'class-methods-use-this': 'off',
 		'no-underscore-dangle': 'off',
 		'no-useless-constructor': 'off',
 		'no-unused-vars': 'off',
