@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { shade } from 'polished';
 
 export const Container = styled.div`
   display: flex;
@@ -14,7 +15,6 @@ export const Title = styled.h1`
   margin-top: 2.5rem;
   margin-right: 1rem;
   color: #fff;
-  // max-width: 28.125rem;
   margin-left: 1rem;
   line-height: 3.5rem;
 `;
@@ -30,6 +30,10 @@ export const Form = styled.form`
     padding: 0 1.5rem;
     border: 0;
     border-radius: 0.3125rem 0 0 0.3125rem;
+    color:#3a3a3a;
+    &::placeholder {
+      color:#a8a8b3;
+    }
   }
   button {
     width: 13.125rem;
@@ -38,5 +42,10 @@ export const Form = styled.form`
     border-radius: 0 0.3125rem 0.3125rem 0;
     color: #fff;
     border: 0;
+    font-weight: bold;
+    transition:background-color:0.2s;
+     &:hover {
+      background: ${shade(0.2, '#04d361')};
+    }
   }
 `;
