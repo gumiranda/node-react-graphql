@@ -2,8 +2,11 @@ import { LoadUsersRepository } from '@/data/contracts';
 
 import { users } from '@/infra/data-sources';
 
-export class FakeUserRepository implements LoadUsersRepository {
+export class UserRepository implements LoadUsersRepository {
 	async loadUsers(name: string): Promise<any[]> {
+		if (!name) {
+			return users;
+		}
 		const appendedNameQuery = name.toUpperCase().split(' ');
 		const usersFiltered = users.filter((user) => {
 			const appendedNameUser = user?.name
