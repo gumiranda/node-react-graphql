@@ -45,11 +45,7 @@ body {
     font-size: 87.5%;
   }
 }
-@media (max-width: 620px) {
-  html {
-    font-size: 67.5%;
-  }
-}
+
 
 
 body,
