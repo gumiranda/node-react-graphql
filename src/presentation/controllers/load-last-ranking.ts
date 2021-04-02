@@ -4,15 +4,15 @@ import {
 	serverError,
 	ok,
 } from '@/presentation/contracts';
-import { LastRankingLoader } from '@/domain/usecases';
+import { LoadUsers } from '@/domain/usecases';
 import { RankingScore } from '../../domain/entities/ranking-score';
 
-export class LoadLastRankingController implements Controller {
-	constructor(private readonly lastRankingLoader: LastRankingLoader) {}
+export class LoadUsersController implements Controller {
+	constructor(private readonly loadUsers: LoadUsers) {}
 
 	async handle(): Promise<HttpResponse<RankingScore[]>> {
 		try {
-			const ranking = await this.lastRankingLoader.load();
+			const ranking = await this.loadUsers.load();
 			return ok(ranking);
 		} catch (error) {
 			return serverError(error);
