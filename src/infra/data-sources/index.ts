@@ -1,2 +1,2 @@
-export * from './ranking';
+export * from './user';
 export * from './db';
