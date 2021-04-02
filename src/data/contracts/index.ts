@@ -1,2 +1,1 @@
-export * from './load-last-ranking-repository';
-export * from './load-last-user-repository';
+export * from './load-users-repository';
