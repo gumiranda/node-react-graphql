@@ -1,5 +1,5 @@
-import { RankingScore } from '@/domain/entities';
+import { User } from '@/domain/entities';
 
 export interface LoadUsers {
-	load: () => Promise<RankingScore[]>;
+	load: () => Promise<User[]>;
 }

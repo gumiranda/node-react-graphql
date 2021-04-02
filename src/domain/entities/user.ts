@@ -1,4 +1,4 @@
-export type RankingScore = {
+export type User = {
 	_id: string;
 	index: number;
 	age: number;
@@ -9,5 +9,5 @@ export type RankingScore = {
 	email: string;
 	phone: string;
 	greeting: string;
-	friends: RankingScore[];
+	friends: User[];
 };
