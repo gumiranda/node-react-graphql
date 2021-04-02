@@ -1,1 +1,1 @@
-export * from './load-users-controller';
+export * from './load-last-ranking-controller';

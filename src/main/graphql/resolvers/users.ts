@@ -3,12 +3,11 @@ import { makeLoadUsersController } from '@/main/factories';
 
 export default {
 	Query: {
-		list: async (_, args): Promise<any> => {
-			const { name } = await args;
-			adaptResolver(makeLoadUsersController(name));
+		list: async (): Promise<any> => {
+			adaptResolver(makeLoadUsersController(''));
 		},
 	},
-	User: {
-		id: (user) => user._id,
-	},
+	// User: {
+	// 	id: (user) => user._id,
+	// },
 };

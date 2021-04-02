@@ -2,9 +2,9 @@ import { gql } from 'apollo-server-express';
 
 export default gql`
 	extend type Query {
-		list: [User!]
+		lastRanking: [RankingScore!]
 	}
-	type User {
+	type RankingScore {
 		_id: String
 		index: Int
 		picture: String
@@ -14,7 +14,7 @@ export default gql`
 		company: String
 		email: String
 		phone: String
-		friends: [User]
+		friends: [RankingScore]
 		greeting: String
 	}
 `;

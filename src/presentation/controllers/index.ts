@@ -1,1 +1,1 @@
-export * from './load-users';
+export * from './load-last-ranking';
