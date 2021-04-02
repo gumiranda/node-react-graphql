@@ -8,32 +8,20 @@ export default createGlobalStyle`
   box-sizing: border-box;
 }
 
-body, input, button {
-  font-size: 16px;
-  font-family: Roboto, sans-serif;
-}
 
 #root {
-  max-width: 960px;
+  max-width: 90rem;
   margin:0 auto;
-  padding:40px 20px;
+  padding:0.5rem 0.15rem;
 }
 
-body,
-button {
-  // font-weight: 400;
-  font-family: Roboto, sans-serif;
-}
 * {
   margin: 0;
   padding: 0;
   outline: 0;
   box-sizing: border-box;
 }
-body {
-  background: #c2c6cf;
-  color: #555;
-}
+
 *:focus {
   outline: 0;
 }
@@ -56,6 +44,12 @@ body {
     font-size: 87.5%;
   }
 }
+@media (max-width: 620px) {
+  html {
+    font-size: 67.5%;
+  }
+}
+
 
 body,
 input,

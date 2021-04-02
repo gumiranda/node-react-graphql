@@ -1,8 +1,16 @@
 import React from 'react';
-import { Title } from './styles';
+import { Title, Form, Container } from './styles';
 
 const Home: React.FC = () => {
-  return <Title>Conheça pessoas na Dialog Social!</Title>;
+  return (
+    <Container>
+      <Title>MySocial</Title>
+      <Form action="">
+        <input placeholder="Type the name of user" />
+        <button type="button">Search</button>
+      </Form>
+    </Container>
+  );
 };
 
 export default Home;
