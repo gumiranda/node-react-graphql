@@ -1,7 +1,8 @@
 import React from 'react';
+import { Title } from './styles';
 
 const Home: React.FC = () => {
-  return <h1>Home</h1>;
+  return <Title>Conheça pessoas na Dialog Social!</Title>;
 };
 
 export default Home;
