@@ -77,21 +77,20 @@ self.addEventListener('message', (event) => {
     self.skipWaiting();
   }
 });
-self.addEventListener('activate', function (event) {
+const cacheName = 'v2';
+
+self.addEventListener('activate', (event) => {
+  // Remove old caches
   event.waitUntil(
-    caches.keys().then(function (cacheNames) {
-      return Promise.all(
-        cacheNames
-          .filter(function (cacheName) {
-            // Return true if you want to remove this cache,
-            // but remember that caches are shared across
-            // the whole origin
-          })
-          .map(function (cacheName) {
-            return caches.delete(cacheName);
-          }),
-      );
-    }),
+    (async () => {
+      const keys = await caches.keys();
+      return keys.map(async (cache) => {
+        if (cache !== cacheName) {
+          console.log(`Service Worker: Removing old cache: ${cache}`);
+          return caches.delete(cache);
+        }
+      });
+    })(),
   );
 });
 // Any other custom service worker logic can go here.
