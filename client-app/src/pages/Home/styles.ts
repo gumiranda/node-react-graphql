@@ -26,7 +26,7 @@ export const Container = styled.div`
 `;
 export const Card = styled.div`
   max-width: 44.75rem;
-  margin-top: 3.75rem;
+  margin-top: 1.75rem;
 
   a {
     background: ${colors.white};
