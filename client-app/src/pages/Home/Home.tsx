@@ -1,16 +1,10 @@
+import Layout from 'components/Layout/Layout';
 import React from 'react';
-import { Title, Form, Container, Card, Grid } from './styles';
+import { Card, Grid } from './styles';
 
 const Home: React.FC = () => {
   return (
-    <>
-      <Container>
-        <Title>MySocial</Title>
-        <Form action="">
-          <input placeholder="Type the name of user" />
-          <button type="button">Search</button>
-        </Form>
-      </Container>
+    <Layout>
       <Grid>
         <Card>
           <a href="test">
@@ -238,7 +232,7 @@ const Home: React.FC = () => {
           </a>
         </Card>
       </Grid>
-    </>
+    </Layout>
   );
 };
 
