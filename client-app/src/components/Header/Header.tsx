@@ -1,13 +1,21 @@
 import React from 'react';
 import { Title, Form, Container } from './styles';
 
-const Header: React.FC = () => {
+const Header: any = ({ name, setName, setQueryName }: any) => {
+  const search = () => {
+    setQueryName(name);
+  };
   return (
     <Container>
       <Title>MySocial</Title>
       <Form action="">
-        <input placeholder="Type the name of user" />
-        <button type="button">Search</button>
+        <input
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Type the name of user"
+        />
+        <button onClick={search} type="button">
+          Search
+        </button>
       </Form>
     </Container>
   );

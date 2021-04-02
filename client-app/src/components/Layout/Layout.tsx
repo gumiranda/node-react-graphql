@@ -1,10 +1,11 @@
 import Header from 'components/Header/Header';
-import React from 'react';
+import React, { useState } from 'react';
 
-const Layout: React.FC = ({ children }) => {
+const Layout: any = (props: any) => {
+  const { children, name, setName, queryName, setQueryName } = props;
   return (
     <>
-      <Header />
+      <Header setQueryName={setQueryName} name={name} setName={setName} />
       {children}
     </>
   );
