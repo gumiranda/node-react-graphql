@@ -49,3 +49,26 @@ export const Form = styled.form`
     }
   }
 `;
+export const Cards = styled.div`
+  margin-top: 5rem;
+  max-width: 43.75rem;
+  a {
+    background: #fff;
+    border-radius: 0.3125rem;
+    width: 35%;
+    padding: 1.5rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    img {
+      width: 12.5rem;
+      height: 12.5rem;
+      border-radius: 0.3125rem;
+    }
+    div {
+      margin-top: 1rem;
+      align-self: flex-start;
+    }
+  }
+`;
