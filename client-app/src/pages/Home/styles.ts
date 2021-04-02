@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { shade } from 'polished';
+import colors from '../../utils/colors';
 
 export const Container = styled.div`
   display: flex;
@@ -14,7 +15,7 @@ export const Title = styled.h1`
   font-size: 3rem;
   margin-top: 2.5rem;
   margin-right: 1rem;
-  color: #fff;
+  color: ${colors.white};
   margin-left: 1rem;
   line-height: 3.5rem;
 `;
@@ -30,22 +31,22 @@ export const Form = styled.form`
     padding: 0 1.5rem;
     border: 0;
     border-radius: 0.3125rem 0 0 0.3125rem;
-    color:#3a3a3a;
+    color: ${colors.gray};
     &::placeholder {
-      color:#a8a8b3;
+      color: ${colors.lightGray};
     }
   }
   button {
     width: 13.125rem;
     height: 3.375rem;
-    background: #04d361;
+    background: ${colors.green};
     border-radius: 0 0.3125rem 0.3125rem 0;
-    color: #fff;
+    color: ${colors.white};
     border: 0;
     font-weight: bold;
-    transition:background-color:0.2s;
-     &:hover {
-      background: ${shade(0.2, '#04d361')};
+    transition: background-color 0.2s;
+    &:hover {
+      background: ${shade(0.2, colors.green)};
     }
   }
 `;
@@ -53,7 +54,7 @@ export const Cards = styled.div`
   margin-top: 5rem;
   max-width: 43.75rem;
   a {
-    background: #fff;
+    background: ${colors.white};
     border-radius: 0.3125rem;
     width: 35%;
     padding: 1.5rem;
@@ -69,6 +70,10 @@ export const Cards = styled.div`
     div {
       margin-top: 1rem;
       align-self: flex-start;
+      strong {
+        font-size: 1.25rem;
+        color: ${colors.darkBlueShade};
+      }
     }
   }
 `;

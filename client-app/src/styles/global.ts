@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import colors from '../utils/colors';
 
 export default createGlobalStyle`
 * {
@@ -28,7 +29,7 @@ export default createGlobalStyle`
 
 html,
 body {
-  background: linear-gradient(-90deg, #8257e5, #7159c1);
+  background: linear-gradient(-90deg, ${colors.primaryShade}, ${colors.primary});
 }
 
 body {
@@ -55,7 +56,7 @@ body,
 input,
 textarea,
 button {
-  color: #222;
+  color: ${colors.black};
   font-size: 1rem; //16px;
   font-family: Roboto, Arial, Helvetica, sans-serif;
 }
