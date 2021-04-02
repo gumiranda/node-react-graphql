@@ -12,8 +12,8 @@ export class LoadUsersController implements Controller {
 
 	async handle(): Promise<HttpResponse<User[]>> {
 		try {
-			const ranking = await this.loadUsers.load();
-			return ok(ranking);
+			const user = await this.loadUsers.load();
+			return ok(user);
 		} catch (error) {
 			return serverError(error);
 		}

@@ -1,6 +1,6 @@
-export class RankingUnavailableError extends Error {
+export class UserUnavailableError extends Error {
 	constructor() {
-		super('Ranking unavailable');
-		this.name = 'RankingUnavailableError';
+		super('User unavailable');
+		this.name = 'UserUnavailableError';
 	}
 }

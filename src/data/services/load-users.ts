@@ -1,6 +1,6 @@
 import { User } from '@/domain/entities';
 import { LoadUsers } from '@/domain/usecases';
-import { RankingUnavailableError } from '@/domain/errors';
+import { UserUnavailableError } from '@/domain/errors';
 import { LoadUsersRepository } from '@/data/contracts';
 
 export class LoadUsersService implements LoadUsers {
@@ -8,7 +8,7 @@ export class LoadUsersService implements LoadUsers {
 
 	async load(): Promise<User[]> {
 		if (new Date().getHours() > 22) {
-			throw new RankingUnavailableError();
+			throw new UserUnavailableError();
 		}
 		return this.loadUsersRepository.loadUsers();
 	}

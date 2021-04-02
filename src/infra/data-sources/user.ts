@@ -1,4 +1,4 @@
-export const ranking = [
+export const user = [
 	{
 		_id: '5f1d7f3e5dc58af42fc39242',
 		index: 0,

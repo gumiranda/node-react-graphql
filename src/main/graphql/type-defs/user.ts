@@ -2,7 +2,7 @@ import { gql } from 'apollo-server-express';
 
 export default gql`
 	extend type Query {
-		lastRanking: [User!]
+		lastUser: [User!]
 	}
 	type User {
 		_id: String

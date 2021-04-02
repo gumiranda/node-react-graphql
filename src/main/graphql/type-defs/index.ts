@@ -1,4 +1,4 @@
 import base from './base';
-import ranking from './user';
+import user from './user';
 
-export default [base, ranking];
+export default [base, user];

@@ -1,9 +1,9 @@
 import { LoadUsersRepository } from '@/data/contracts';
 
-import { ranking } from '@/infra/data-sources';
+import { user } from '@/infra/data-sources';
 
-export class FakeRankingRepository implements LoadUsersRepository {
+export class FakeUserRepository implements LoadUsersRepository {
 	async loadUsers(): Promise<any[]> {
-		return ranking;
+		return user;
 	}
 }
