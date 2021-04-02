@@ -1,3 +1,5 @@
+/* eslint-disable import/export */
+/* eslint-disable no-redeclare */
 import {
 	Controller,
 	HttpResponse,
@@ -10,12 +12,19 @@ import { User } from '../../domain/entities/user';
 export class LoadUsersController implements Controller {
 	constructor(private readonly loadUsers: LoadUsers) {}
 
-	async handle(): Promise<HttpResponse<User[]>> {
+	async handle(
+		request: LoadUsersController.Request,
+	): Promise<HttpResponse<User[]>> {
 		try {
-			const user = await this.loadUsers.load();
-			return ok(user);
+			const users = await this.loadUsers.load(request.name);
+			return ok(users);
 		} catch (error) {
 			return serverError(error);
 		}
 	}
+}
+export namespace LoadUsersController {
+	export type Request = {
+		name: string;
+	};
 }

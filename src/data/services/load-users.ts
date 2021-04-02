@@ -6,10 +6,11 @@ import { LoadUsersRepository } from '@/data/contracts';
 export class LoadUsersService implements LoadUsers {
 	constructor(private readonly loadUsersRepository: LoadUsersRepository) {}
 
-	async load(): Promise<User[]> {
-		if (new Date().getHours() > 22) {
+	async load(name: string): Promise<User[]> {
+		const users = await this.loadUsersRepository.loadUsers(name);
+		if (!users) {
 			throw new UserUnavailableError();
 		}
-		return this.loadUsersRepository.loadUsers();
+		return users;
 	}
 }

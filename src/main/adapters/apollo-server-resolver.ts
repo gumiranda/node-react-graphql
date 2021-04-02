@@ -1,6 +1,12 @@
 import { Controller } from '@/presentation/contracts';
 
-export const adaptResolver = async (controller: Controller): Promise<any> => {
-	const httpResponse = await controller.handle();
+export const adaptResolver = async (
+	controller: Controller,
+	args?: any,
+): Promise<any> => {
+	const request = {
+		...(args || {}),
+	};
+	const httpResponse = await controller.handle(request);
 	return httpResponse.data;
 };

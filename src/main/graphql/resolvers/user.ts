@@ -3,7 +3,8 @@ import { makeLoadUsersController } from '@/main/factories';
 
 export default {
 	Query: {
-		listUser: async (): Promise<any> =>
-			adaptResolver(makeLoadUsersController()),
+		listUser: async (_, args, {}): Promise<any> => {
+			return adaptResolver(makeLoadUsersController(), args);
+		},
 	},
 };
