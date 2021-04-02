@@ -72,7 +72,7 @@ export const Grid = styled.div`
   }
   @media (max-width: 412px) {
     grid-template-columns: auto;
-    padding: 0 6rem;
+    padding: 0 5.5rem;
   }
   @media (max-width: 380px) {
     grid-template-columns: auto;
@@ -82,7 +82,6 @@ export const Grid = styled.div`
     grid-template-columns: auto;
     padding: 0 2.2rem;
   }
-
   padding: 1rem;
 `;
 export const Card = styled.div`

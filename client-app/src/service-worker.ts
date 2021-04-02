@@ -50,14 +50,15 @@ registerRoute(
     // Return true to signal that we want to use the handler.
     return true;
   },
-  createHandlerBoundToURL(process.env.PUBLIC_URL + '/index.html')
+  createHandlerBoundToURL(`${process.env.PUBLIC_URL}/index.html`),
 );
 
 // An example runtime caching route for requests that aren't handled by the
 // precache, in this case same-origin .png requests like those from in public/
 registerRoute(
   // Add in any other file extensions or routing criteria as needed.
-  ({ url }) => url.origin === self.location.origin && url.pathname.endsWith('.png'),
+  ({ url }) =>
+    url.origin === self.location.origin && url.pathname.endsWith('.png'),
   // Customize this strategy as needed, e.g., by changing to CacheFirst.
   new StaleWhileRevalidate({
     cacheName: 'images',
@@ -66,7 +67,7 @@ registerRoute(
       // least-recently used images are removed.
       new ExpirationPlugin({ maxEntries: 50 }),
     ],
-  })
+  }),
 );
 
 // This allows the web app to trigger skipWaiting via
@@ -76,5 +77,21 @@ self.addEventListener('message', (event) => {
     self.skipWaiting();
   }
 });
-
+self.addEventListener('activate', function (event) {
+  event.waitUntil(
+    caches.keys().then(function (cacheNames) {
+      return Promise.all(
+        cacheNames
+          .filter(function (cacheName) {
+            // Return true if you want to remove this cache,
+            // but remember that caches are shared across
+            // the whole origin
+          })
+          .map(function (cacheName) {
+            return caches.delete(cacheName);
+          }),
+      );
+    }),
+  );
+});
 // Any other custom service worker logic can go here.
