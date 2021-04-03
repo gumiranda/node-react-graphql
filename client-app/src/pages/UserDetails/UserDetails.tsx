@@ -11,7 +11,6 @@ import { Container, Title } from './styles';
 const UserDetails: React.FC = () => {
   const history = useHistory();
   const { name }: any = useParams();
-  const [user, setUser] = useState(null);
   const { data, error, isLoading, isSuccess } = useGetUsers(name);
   const pushToHome = (nameParam) => {
     localStorage.setItem('@nameQuery', nameParam);
