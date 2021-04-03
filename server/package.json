@@ -13,10 +13,12 @@
   },
   "dependencies": {
     "apollo-server-express": "^2.22.2",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "fs": "^0.0.1-security",
     "graphql": "^15.5.0",
     "module-alias": "^2.2.2",
+    "morgan": "^1.10.0",
     "rimraf": "^3.0.2"
   },
   "devDependencies": {

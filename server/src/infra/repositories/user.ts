@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import { LoadUsersRepository } from '@/data/contracts';
 
 import { users } from '@/infra/data-sources';
