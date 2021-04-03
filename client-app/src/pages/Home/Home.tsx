@@ -1,26 +1,41 @@
 /* eslint-disable no-underscore-dangle */
 import Layout from 'components/Layout/Layout';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useGetUsers } from 'graphql/useRequest';
-// import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import colors from 'utils/colors';
+import { DualRing } from 'react-spinners-css';
 import { Card, Grid, Container } from './styles';
 
 const Home: React.FC = () => {
-  // const { id } = useParams();
   const [queryName, setQueryName] = useState('');
-
   const { data, error, isLoading, isSuccess } = useGetUsers(queryName);
-
+  useEffect(() => {
+    const nameQuery = localStorage.getItem('@nameQuery');
+    if (nameQuery) {
+      setQueryName(nameQuery);
+    }
+    () => {
+      localStorage.removeItem('@nameQuery');
+    };
+  }, []);
   return (
     <Layout setQueryName={setQueryName}>
       {error && <h1>Something went wrong!</h1>}
-      {isLoading && <h1>Loading...</h1>}
+      {isLoading && (
+        <Container>
+          <DualRing color={colors.white} size={50} />
+        </Container>
+      )}
       {isSuccess && (
         <Container>
           <Grid>
             {data.map((user: User) => (
               <Card>
-                <a key={user._id} href={user._id}>
+                <a
+                  key={user._id}
+                  href={`user-details/${user.name}/${user._id}`}
+                >
                   <img src={user.picture} alt={user.name} />
                   <div>
                     <strong>name: {user.name}</strong>

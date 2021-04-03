@@ -6,8 +6,9 @@ import UserDetails from '../pages/UserDetails/UserDetails';
 
 const Routes: React.FC = () => (
   <Switch>
+    {/* <Route path="/" exact component={Home} /> */}
     <Route path="/" exact component={Home} />
-    <Route path="/details" component={UserDetails} />
+    <Route path="/user-details/:name/:id" component={UserDetails} />
   </Switch>
 );
 export default Routes;
