@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Layout from 'components/Layout/Layout';
 import { useParams, useHistory } from 'react-router-dom';
 import { useGetUsers } from 'graphql/useRequest';
