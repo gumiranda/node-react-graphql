@@ -1,21 +1,22 @@
-import React from 'react';
+import React, { useState, FormEvent } from 'react';
 import { Title, Form, Container } from './styles';
 
-const Header: any = ({ name, setName, setQueryName }: any) => {
-  const search = () => {
+const Header: any = ({ setQueryName }: any) => {
+  const [name, setName] = useState('');
+
+  const search = (event: FormEvent<HTMLFormElement>): any => {
+    event.preventDefault();
     setQueryName(name);
   };
   return (
     <Container>
       <Title>MySocial</Title>
-      <Form action="">
+      <Form onSubmit={search}>
         <input
           onChange={(e) => setName(e.target.value)}
           placeholder="Type the name of user"
         />
-        <button onClick={search} type="button">
-          Search
-        </button>
+        <button type="submit">Search</button>
       </Form>
     </Container>
   );

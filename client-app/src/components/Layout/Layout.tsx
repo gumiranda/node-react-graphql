@@ -2,10 +2,10 @@ import Header from 'components/Header/Header';
 import React, { useState } from 'react';
 
 const Layout: any = (props: any) => {
-  const { children, name, setName, queryName, setQueryName } = props;
+  const { children, setQueryName } = props;
   return (
     <>
-      <Header setQueryName={setQueryName} name={name} setName={setName} />
+      <Header setQueryName={setQueryName} />
       {children}
     </>
   );

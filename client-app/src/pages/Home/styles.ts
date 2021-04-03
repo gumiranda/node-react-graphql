@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { shade } from 'polished';
 import colors from '../../utils/colors';
 
 export const Grid = styled.div`
@@ -16,23 +15,24 @@ export const Grid = styled.div`
   @media (max-width: 520px) {
     grid-template-columns: auto;
   }
-  margin: 0 1rem;
-  grid-gap: 4.5rem;
+  grid-gap: 2rem;
 `;
 export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left: 2rem;
+  margin-right: 1rem;
 `;
 export const Card = styled.div`
-  max-width: 44.75rem;
+  max-width: 40.75rem;
   margin-top: 1.75rem;
 
   a {
     background: ${colors.white};
     border-radius: 0.3125rem;
-    width: 98%;
-    padding: 1.8rem;
+    width: 95%;
+    padding: 1.2rem;
     text-decoration: none;
     display: flex;
     align-items: center;

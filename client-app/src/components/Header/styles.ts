@@ -15,14 +15,14 @@ export const Container = styled.div`
 export const Title = styled.h1`
   font-size: 3rem;
   margin-top: 2.5rem;
-  margin-right: 1rem;
+  margin-right: 2rem;
   color: ${colors.white};
-  margin-left: 1rem;
+  margin-left: 2rem;
   line-height: 3.5rem;
 `;
 export const Form = styled.form`
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
   margin-top: 2.5rem;
   max-width: 43.75rem;
   display: flex;
